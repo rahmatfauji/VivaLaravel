@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/users', 'App\Presenters\UserPresenter@index');
+Route::get('/users/create', 'App\Presenters\UserPresenter@create');
+Route::post('/users', 'App\Presenters\UserPresenter@store')->name('users.store');
